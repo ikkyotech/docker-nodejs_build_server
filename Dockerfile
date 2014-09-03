@@ -2,7 +2,7 @@ FROM node
 MAINTAINER "Martin Heidegger" <mh@ikkyotech.com>
 
 RUN apt-get -y update
-RUN apt-get -y install git make build-essential openssh-server mongodb-server supervisor libssl-dev python python-dev git default-jre-headless s3cmd
+RUN apt-get -y install git make build-essential openssh-server mongodb-server supervisor libssl-dev python python-dev git default-jre-headless s3cmd locales python-dateutil python-magic cron.d
 
 # turn off pam otherwise the ssh login will not work
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
