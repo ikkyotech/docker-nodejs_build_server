@@ -9,9 +9,9 @@ RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config
 
 RUN locale-gen en_US en_US.UTF-8
-ENV LOCALE "en_US"
-ENV LC_ALL "en_US.UTF-8"
-ENV LANG "en_US.UTF-8"
+ENV LOCALE en_US
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
 RUN localedef -v -c -i en_US -f UTF-8 en_US.UTF-8 || true
 RUN dpkg-reconfigure -f noninteractive tzdata
 
